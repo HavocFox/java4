@@ -10,7 +10,7 @@ class Account {
         this.owner = owner;
     }
 
-    deposit(amount) {
+    deposit = (amount) => {
         if (amount > 0) {
             this.balance += amount;
             console.log(`You deposited: $${amount}. Your new balance: $${this.balance}`);
@@ -19,7 +19,7 @@ class Account {
         }
     }
 
-    withdraw(amount) {
+    withdraw = (amount) => {
         if (amount > 0 && amount <= this.balance) {
             this.balance -= amount;
             console.log(`Withdrew: $${amount}. New Balance: $${this.balance}`);
@@ -30,7 +30,7 @@ class Account {
         }
     }
 
-    calculateInterest(rate, years) {        // Not entirely sure about the formula here.
+    calculateInterest = (rate, years) => {        // Not entirely sure about the formula here.
         if (rate > 0 && years > 0) {
             const interest = this.balance * Math.pow((1 + rate / 100), years) - this.balance;
             console.log(`Interest after ${years} years at a rate of ${rate}%: $${interest.toFixed(2)}`);

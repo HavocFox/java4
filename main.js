@@ -13,34 +13,30 @@ class Book {
 
 }
 
-
-let myBook = new Book("Slapped By Legal", "Danny Gonzalez", 198);
-console.log(myBook.displaymethod());
-
 // Task 3 -------------------------
-let Books = [];
+let bookArray = [];
 
-function addBook(title, author, pages) {
+const addBook = (title, author, pages) => {
     const newBook = new Book(title, author, pages);
     bookArray.push(newBook);
 }
 
-function searchBookByTitle(title) {
+const searchBookByTitle = (title)  => {
     return bookArray.filter(book => book.title.toLowerCase().includes(title.toLowerCase()));
 }
 
-function searchBookByAuthor(author) {
+const searchBookByAuthor = (author)  => {
     return bookArray.filter(book => book.author.toLowerCase().includes(author.toLowerCase()));
 }
 
 // -------------------------
 
 // Task 4 -------------------------
-function filterBooksByPages() {
+const filterBooksByPages = ()  => {
     return bookArray.filter(book => book.pages > 100);
 }
 
-function addTitleAndAuthorPrefix() {
+const addTitleAndAuthorPrefix = ()  => {
     return bookArray.map(book => {
         return {
             title: `Title: ${book.title}`,
@@ -53,7 +49,7 @@ function addTitleAndAuthorPrefix() {
 
 addBook('To Kill a Mockingbird', 'Harper Lee', 281);
 addBook('Slapped By Legal', 'Danny Gonzalez', 198);
-addBook('The Little Prince', 'Antoine de Saint-Exupéry', 96);
+addBook('The Little Prince', 'Curious George', 96);
 
 console.log(searchBookByTitle('The'));
 
@@ -67,7 +63,3 @@ console.log(filterBooksByPages());
 console.log(addTitleAndAuthorPrefix());
 
 // -------------------------
-// -------------------------
-// -------------------------
-
-// EXPLORING OBJECTS AND MATH IN JAVASCRIPT
